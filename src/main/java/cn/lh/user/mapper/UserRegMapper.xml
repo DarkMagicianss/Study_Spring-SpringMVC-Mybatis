@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lh.user.mapper.UserRegMapper">
+    <select id="checkUser" parameterType="cn.lh.user.po.UserCustom" resultType="cn.lh.user.po.UserCustom">
+        select * from user
+        where username = #{username}
+        or email = #{email}
+    </select>
+    <insert id="regUser" parameterType="cn.lh.user.po.UserCustom">
+        insert into user (username,password,nickname,email)
+        values (#{username},#{password},#{nickname},#{email})
+    </insert>
+    <select id="loginUser" parameterType="cn.lh.user.po.UserCustom" resultType="cn.lh.user.po.UserCustom">
+        select * from user
+        where username=#{username}
+        and password=#{password}
+    </select>
+</mapper>

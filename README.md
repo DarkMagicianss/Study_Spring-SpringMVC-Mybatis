@@ -1,0 +1,2 @@
+# Project_SSM
+这是用SpringMVC+Spring+Mybatis实现的注册登录查询商品信息以及修改商品信息

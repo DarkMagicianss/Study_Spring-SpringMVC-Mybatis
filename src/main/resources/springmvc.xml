@@ -6,13 +6,14 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--该文件被applicationContext-dao.xml引用-->
     <!--处理器映射器-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
     <!--处理器适配器-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
     <!--配置处理器 即handler 这里使用扫描包的形式-->
     <context:component-scan base-package="cn.lh.items.controller,cn.lh.user.controller"/>
-    <!--配置视图解析器 要求将jstl的包加到classpath-->
+    <!--配置视图解析器 要求将jstl的包加到classpath 配置返回jsp文件的前后缀-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/jsp/"/>
         <property name="suffix" value=".jsp"/>

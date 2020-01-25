@@ -1,8 +1,10 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--该文件被applicationContext-dao.xml引用-->
 <configuration>
-
+    <!--一般参数都是基本的数据类型或封装类型，但都需要声明该类型的全路径，java.lang.String，或者 cn.com.mybatis.pojo.User,
+    这时就可以通过 typeAliases 别名来设置，简化复杂度-->
     <typeAliases>
         <package name="cn.lh.items.po,cn.lh.user.po"/>
     </typeAliases>

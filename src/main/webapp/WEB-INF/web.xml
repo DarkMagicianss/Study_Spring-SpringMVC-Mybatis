@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!--字符格式的过滤器-->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -16,11 +17,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--配置spring容器监听器-->
+    <!--配置Spring的配置文件 将xml配置文件引入classpath-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext-*.xml</param-value>
     </context-param>
+    <!--配置spring容器监听器-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -29,13 +31,14 @@
     <servlet>
         <servlet-name>springmvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--加载springmvc配置-->
+        <!--加载classpath下面的springmvc配置-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springmvc.xml</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
+        <!--设定对应的访问方式-->
         <servlet-name>springmvc</servlet-name>
         <url-pattern>*.action</url-pattern>
     </servlet-mapping>

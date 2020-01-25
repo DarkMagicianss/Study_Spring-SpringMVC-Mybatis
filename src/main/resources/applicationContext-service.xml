@@ -15,6 +15,7 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+    <!--将服务层的实现对象注入到controllor中-->
     <bean id="itemsService" class="cn.lh.items.service.ItemsServiceImpl"/>
     <bean id="userService" class="cn.lh.user.service.UserServiceImpl"/>
 </beans>

@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.lh.items.mapper.ItemsMapper">
+    <!--这里的namespace要和真正的mapper对应起来 好像要直接放到一个目录下-->
     <select id="findItemsById" parameterType="Integer" resultType="cn.lh.items.po.ItemsCustom">
         select * from items where id = #{id}
     </select>

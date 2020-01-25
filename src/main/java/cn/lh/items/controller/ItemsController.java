@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 public class ItemsController {
-    //注入service
+    //来自applicationContext-service.xml注入的service
     @Autowired
     private ItemsService itemsService;
 
